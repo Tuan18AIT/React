@@ -1,12 +1,16 @@
-import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./styles.css";
+export default function LightSwitch() {
+  function handleClick() {
+    let bodyStyle = document.body.style;
+    if (bodyStyle.backgroundColor === 'black') {
+      bodyStyle.backgroundColor = 'white';
+    } else {
+      bodyStyle.backgroundColor = 'black';
+    }
+  }
 
-import App from "./App";
-
-const root = createRoot(document.getElementById("root"));
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+  return (
+    <button onClick={handleClick}>
+      Toggle the lights
+    </button>
+  );
+}
